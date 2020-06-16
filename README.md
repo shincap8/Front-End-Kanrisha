@@ -1,68 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# API Kanrisha
+## File Structures
+#### 1. Routes: 
+contains the scripts to control the data flux between Kanrisha's frontend.
+###### 1.1 advances.js:
+- /new- task,
+- /tasks/addfreelancers.
+- /tasks/deletefreelancers,
+- /createcomment,
+- /comments-task/:id,
+- /task/freelancers/:id,
+- /task/:idproject/:idfreelancer,
+- /task/:id
+###### 1.2 freelancers.js:
+- /signUp/freelancer,
+- /signIn/freelancer,
+- /all-freelancers,
+- /all-freelancers/:taskId,
+- /freelancer/:id,
+###### 1.3 manager.js:
+- /signUp/manager,
+- /signIn/manager,
+- /manager/:id,
+- /projects/:id
+###### 1.4 project.js:
+- /new-project,
+- /project/freelancer/:freelancerid,
+- /project/:id,
+- /active-project/:id,
+- /active-project/freelancer/:id,
+- /project/freelancers/:id,
+- /project/tasks/:id,
+- /changestatus/:id
+###### 1.5 task.js:
+- /new-task,
+- /tasks/addfreelancers,
+- /tasks/deletefreelancers,
+- /createcomment,
+- /comments-task/:id,
+- /task/freelancers/:id,
+- /task/:idproject/:idfreelancer,
+- /task/:id
 
-## Available Scripts
+## 2 Models:
+contains Object class uses in the database.
+###### 2.1: advance_measure.js
+###### 2.2: comments.js
+###### 2.3: freelancer.js
+###### 2.4: manager.js
+###### 2.5: project.js
+###### 2.6: task.js
 
-In the project directory, you can run:
+## Routes
 
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+|               Request               | Type |               Routes              |                                                          Parameters                                                          |
+|:-----------------------------------:|:----:|:---------------------------------:|:----------------------------------------------------------------------------------------------------------------------------:|
+|            Create manager           | POST |          /singUp/manager          |                                       { name: String, email: String, password: String }                                      |
+|          Create freelancer          | POST |         /singUp/freelancer        |                                       { name: String, email: String, password: String }                                      |
+|            Login manager            | POST |          /signIn/manager          |                                              { email: String, password: String }                                             |
+|           Login freelancer          | POST |         /signIn/freelancer        |                                              { email: String, password: String }                                             |
+|          Create new project         | POST |            /new-project           |           { managerId: String, name: String, description: String, status: Boolean, deadline: String, advanced: 0 }           |
+|           Create new task           | POST |             /new-task             | { name: String, description: String, projectId: String, weight: Number, tasktype: Number, amount: number, deadline: String } |
+|          Create new comment         | POST |         /createnewcomment         |                 { title: String, taskId: String, description: String, Idowner: String, profiletype: Number }                 |
+|        Add task to freelancer       | POST | /tasks/addfreelancers             |                              { taskId: String, freelancersids: ["String"], projectId: "String" }                             |
+| Update task's advance by freelancer |  PUT |           /modifyadvance          |                                    { taskId: String, freelancerId: String, value: Number }                                   |
+|       Change project's status       | PUT  |      /changestatus/projectid      |                                                                                                                              |
+|        All manager's projects       |  GET |        /projects/managerId        |                                                                                                                              |
+|          Project's advance          |  GET |     /project-advance/projectId    |                                                                                                                              |
+|            Task's advance           |  GET |        /task-advance/taskId       |                                                                                                                              |
+|           All freelancers           |  GET |          /all-freelancers         |                                                                                                                              |
+|      All project's freelancers      |  GET |   /project/freelancers/projectid  |                                                                                                                              |
+|        All task's freelancers       |  GET |      /task/freelancers/taskid     |                                                                                                                              |
+|            Task's advance           |  GET |        /task-advance/taskid       |                                                                                                                              |
+|          Project's advance          |  GET |     /project-advance/projectid    |                                                                                                                              |
+|         All task's comments         |  GET |       /comments-task/taskid       |                                                                                                                              |
+|      Active projects by manager     |  GET |     /active-project/idmanager     |                                                                                                                              |
+|            Project's task           |  GET |      /project/tasks/projectid     |                                                                                                                              |
+|           Freelancer by id          |  GET |      /freelancer/freelancerid     |                                                                                                                              |
+|            Manager by id            |  GET |         /manager/managerId        |                                                                                                                              |
+|     Freelancer's task by project    |  GET |    /task/idproject/idfreelancer   |                                                                                                                              |
+|       All freelancer's project      |  GET | /project/freelancer/freelancerid |                                                                                                                              |
+|       update the list of freelancers for task                              |     GET |       all-freelancers/:taskId                            |                                                                                                                              |
+|     Active project by freelancer                               |      GET | active-project/freelancer/frelancerid                                   |                                                                                                                              |
+|         task's advances by freelancer                            |  GET    |    freelancer/task-advance/:taskId/:freelancerId                               |                                                                                                                              |
+|                                     |      |                                   |                                                                                                                              |
+|                                     |      |                                   |                                                                                                                              |
+|                                     |      |                                   |                                                                                                                              |
