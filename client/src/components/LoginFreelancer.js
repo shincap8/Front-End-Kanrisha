@@ -30,7 +30,7 @@ class LoginFreelancer extends React.Component {
     const { email, password } = this.state;
 
     await axios.post(
-      'https://kanrisha.herokuapp.com/signIn/freelancer',
+      'kanrisha.herokuapp.com/signIn/freelancer',
       {
         email: email,
         password: password,
