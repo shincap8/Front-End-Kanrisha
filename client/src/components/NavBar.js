@@ -13,9 +13,9 @@ export class NavBar extends React.Component {
                   </Link>
     }
     return (
-      <nav className="navbar" style={nbStyle}>
+      <nav className="navbar">
         <Link to="/">
-          <img className="navbar-brand d-inline-block align-top" width="330" height="112" src={logo} style={nbStyle.logo} alt="Kanrisha Logo" />
+          <img className="navbar-brand d-inline-block align-top" width ="330" height="112"src={logo} alt="Kanrisha Logo" />
         </Link>
         <h3 className="text-left">Personnel Manager</h3>
         <ul className="nav justify-content-end">
