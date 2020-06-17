@@ -48,7 +48,7 @@ app.use(require('./routes/advances'));
 // global variables
 
 // static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/client/public')));
 
 /*app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "public", "index.html"));
