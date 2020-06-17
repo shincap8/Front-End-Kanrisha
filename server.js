@@ -18,8 +18,6 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
-console.log(process.env.PORT);
-
 // middlewares
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json({ extenden: false }));
@@ -38,7 +36,7 @@ app.use((req, res, next) => {
   res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
-app.use(express.static(path.join(__dirname, "client", "build")));
+app.use('/static', express.static(path.join(__dirname, "client", "build")));
 
 // routes
 app.use(require('./routes/project'));
