@@ -10,6 +10,7 @@ import {NewTask} from '../views/NewTask';
 import {TaskPage} from '../views/TaskPage';
 import {AllProjects} from '../views/AllProjects';
 import { NotFound } from '../views/Page404';
+window.router = history;
 
 function App() {
   return (
