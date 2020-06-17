@@ -18,6 +18,8 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
+console.log(process.env.PORT);
+
 // middlewares
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json({ extenden: false }));
