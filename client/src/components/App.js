@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import history from '../history';
 import { Login } from '../views/Login';
 import { Home } from '../views/Home';
@@ -15,7 +15,6 @@ window.router = history;
 function App() {
   return (
     <Router history={history}>
-      <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/NotFound" component={NotFound} />
         <Layout>
@@ -26,7 +25,6 @@ function App() {
           <Route exact path="/NewTask" component={NewTask} />
           <Route exact path="/TaskPage" component={TaskPage} />
         </Layout>
-      </Switch>
     </Router>
   );
 }
