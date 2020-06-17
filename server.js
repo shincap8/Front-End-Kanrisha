@@ -36,7 +36,7 @@ app.use((req, res, next) => {
   res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
-app.use(express.static(path.join(__dirname, "client", "build")));
+//app.use(express.static(path.join(__dirname, "client", "build")));
 
 // routes
 app.use(require('./routes/project'));
@@ -50,8 +50,8 @@ app.use(require('./routes/advances'));
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get("*", (req, res) => {
+/*app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "public", "index.html"));
-});
+});*/
 
 module.exports = app;
