@@ -40,7 +40,7 @@ export class ProjectPage extends React.Component {
       this.loadProject();
     }
     if (this.state.user === 'manager') {
-      const url1 = 'http://localhost:3001/project/tasks/' + history.location.state.projectId;
+      const url1 = 'https://kanrisha.herokuapp.com/project/tasks/' + history.location.state.projectId;
       axios.get(
         url1
         ).then(response => {
@@ -48,7 +48,7 @@ export class ProjectPage extends React.Component {
         }).catch(error => {
           console.log("registration error", error);
         });
-      const url2 = 'http://localhost:3001/project/freelancers/' + history.location.state.projectId;
+      const url2 = 'https://kanrisha.herokuapp.com/project/freelancers/' + history.location.state.projectId;
       axios.get(
         url2
         ).then(response => {
@@ -58,7 +58,7 @@ export class ProjectPage extends React.Component {
           console.log("Error", error);
         });
     } else {
-      const url1 = 'http://localhost:3001/task/' + history.location.state.projectId + '/' + history.location.state.freelancerId;
+      const url1 = 'https://kanrisha.herokuapp.com/task/' + history.location.state.projectId + '/' + history.location.state.freelancerId;
       axios.get(
         url1
       ).then(response => {
@@ -71,7 +71,7 @@ export class ProjectPage extends React.Component {
   }
 
   async loadProject () {
-    const url1 = 'http://localhost:3001/project/' + history.location.state.projectId;
+    const url1 = 'https://kanrisha.herokuapp.com/project/' + history.location.state.projectId;
     await axios.get(
       url1
     ).then(response => {

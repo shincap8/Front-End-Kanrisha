@@ -30,7 +30,7 @@ class LoginManager extends React.Component {
     const { email, password } = this.state;
 
     axios.post(
-      'http://localhost:3001/signIn/manager',
+      'https://kanrisha.herokuapp.com/signIn/manager',
       {
         email: email,
         password: password,

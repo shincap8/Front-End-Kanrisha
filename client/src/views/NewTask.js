@@ -49,7 +49,7 @@ export class NewTask extends React.Component {
     e.preventDefault();
     const { name, description, deadline, projectId, freelancersId, commentsId, weight, tasktype, amount } = this.state.task; //add deadline
     axios.post(
-      'http://localhost:3001/new-task',
+      'https://kanrisha.herokuapp.com/new-task',
       {
         name: name,
         description: description,

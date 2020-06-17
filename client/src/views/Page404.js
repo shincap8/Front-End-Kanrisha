@@ -16,7 +16,7 @@ export class NotFound extends React.Component {
                             <img className="ComputerError col-md-12 mt-2 ml-3" src={ error } alt="pc" />
                         </div>
                         <div>
-                            <a href="http://localhost:3000">
+                        <a href="https://kanrisha.herokuapp.com/">
                                 <img className="LogoImage" src={ Logo } alt="KanrishaHome" />
                             </a>
                         </div>

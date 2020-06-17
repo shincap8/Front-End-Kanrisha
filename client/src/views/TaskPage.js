@@ -55,7 +55,7 @@ export class TaskPage extends React.Component {
   
   componentDidMount () {
     if (!history.location.state.previousPage) {
-      const url1 = 'http://localhost:3001/task/' + history.location.state.taskId;
+      const url1 = 'https://kanrisha.herokuapp.com/task/' + history.location.state.taskId;
       axios.get(
         url1
         ).then(response => {
@@ -69,7 +69,7 @@ export class TaskPage extends React.Component {
   }
 
   getFreelancers () {
-    const url2 = 'http://localhost:3001/task/freelancers/' + history.location.state.taskId;
+    const url2 = 'https://kanrisha.herokuapp.com/task/freelancers/' + history.location.state.taskId;
     axios.get(
       url2
     ).then(response => {
@@ -80,7 +80,7 @@ export class TaskPage extends React.Component {
   }
 
   async getAdvanceF () {
-    const url = 'http://localhost:3001/freelancer/task-advance/' + this.state.taskId + '/' + this.state.freelancerId;
+    const url = 'https://kanrisha.herokuapp.com/freelancer/task-advance/' + this.state.taskId + '/' + this.state.freelancerId;
     await axios.get(
       url
     ).then(response => {
@@ -91,7 +91,7 @@ export class TaskPage extends React.Component {
   }
 
   async loadProject() {
-    const url1 = 'http://localhost:3001/project/' + history.location.state.projectId;
+    const url1 = 'https://kanrisha.herokuapp.com/project/' + history.location.state.projectId;
     await axios.get(
       url1
     ).then(response => {
@@ -105,7 +105,7 @@ export class TaskPage extends React.Component {
     e.preventDefault();
     const { freelancerId, taskId, value } = this.state;
     await axios.put(
-      'http://localhost:3001/modifyadvance',
+      'https://kanrisha.herokuapp.com/modifyadvance',
       {
         freelancerId: freelancerId,
         taskid: taskId,

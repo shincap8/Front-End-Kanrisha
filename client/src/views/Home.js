@@ -19,7 +19,7 @@ export class Home extends React.Component {
 
   componentDidMount () {
     if (this.state.user === "manager") {
-      let url = 'http://localhost:3001/active-project/' + this.state.managerId;
+      let url = 'https://kanrisha.herokuapp.com/active-project/' + this.state.managerId;
       axios.get(
         url
       ).then(response => {
@@ -29,7 +29,7 @@ export class Home extends React.Component {
         console.log("registration error", error);
       });
     } else {
-      const url = 'http://localhost:3001/project/freelancer/' + history.location.state.freelancerId;
+      const url = 'https://kanrisha.herokuapp.com/project/freelancer/' + history.location.state.freelancerId;
       axios.get(
         url
       ).then(response => {

@@ -16,7 +16,7 @@ class ProjectAdvance extends React.Component {
     if (projectId === undefined) {
       projectId = history.location.state.projectId;
     }
-    const url2 = 'http://localhost:3001/project-advance/' + projectId;
+    const url2 = 'https://kanrisha.herokuapp.com/project-advance/' + projectId;
     axios.get(
       url2
     ).then(response => {

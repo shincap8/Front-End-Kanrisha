@@ -19,7 +19,7 @@ export class Comments extends React.Component {
     }
 
     async getComments () {
-      const url = 'http://localhost:3001/comments-task/' + history.location.state.taskId;
+      const url = 'https://kanrisha.herokuapp.com/comments-task/' + history.location.state.taskId;
       await axios.get(
         url
         ).then(response => {

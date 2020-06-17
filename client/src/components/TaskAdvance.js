@@ -17,7 +17,7 @@ class TaskAdvance extends React.Component {
       taskId = history.location.state.taskId;
     }
     if (history.location.state.user === "manager" && this.props.user !== 'freelancer') {
-      const url = 'http://localhost:3001/task-advance/' + taskId;
+      const url = 'https://kanrisha.herokuapp.com/task-advance/' + taskId;
       axios.get(
         url
         ).then(response => {
@@ -38,7 +38,7 @@ class TaskAdvance extends React.Component {
       } else {
         freelancerId = history.location.state.freelancerId;
       }
-      const url2 = 'http://localhost:3001/freelancer/task-advance/' + taskId + '/' + freelancerId;
+      const url2 = 'https://kanrisha.herokuapp.com/freelancer/task-advance/' + taskId + '/' + freelancerId;
       axios.get(
         url2
       ).then(response => {
@@ -50,7 +50,6 @@ class TaskAdvance extends React.Component {
   }
     
   render () {
-    console.log(this.props.type)
     let advance = "";
     if (history.location.pathname === '/TaskPage' && history.location.state.user === 'freelancer') {
       advance = this.props.value;

@@ -23,7 +23,7 @@ class AddFreelancers extends React.Component {
 
   async getfreelancerlist() {
     await axios.get(
-      'http://localhost:3001/all-freelancers/' + this.props.taskId
+      'https://kanrisha.herokuapp.com/all-freelancers/' + this.props.taskId
     ).then(response => {
       this.setState({ freelancers: response.data });
     }).catch(error => {
@@ -48,7 +48,7 @@ class AddFreelancers extends React.Component {
 
   async handleSubmit() {
     await axios.post(
-      'http://localhost:3001/tasks/addfreelancers',
+      'https://kanrisha.herokuapp.com/tasks/addfreelancers',
       {
         taskId: this.props.taskId,
         freelancerids: this.state.chosen,

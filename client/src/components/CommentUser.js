@@ -11,7 +11,7 @@ class CommentUser extends React.Component {
 
     componentDidMount () {
       if (this.props.type === 0) {
-        const url = `http://localhost:3001/manager/${this.props.userId}`;
+        const url = `https://kanrisha.herokuapp.com/manager/${this.props.userId}`;
         axios.get(
           url
         ).then(response => {
@@ -22,7 +22,7 @@ class CommentUser extends React.Component {
         });
       } else {
         console.log("else")
-        const url = `http://localhost:3001/freelancer/${this.props.userId}`;
+        const url = `https://kanrisha.herokuapp.com/freelancer/${this.props.userId}`;
         console.log(url);
         axios.get(
           url

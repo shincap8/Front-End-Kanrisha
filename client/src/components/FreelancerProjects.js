@@ -16,7 +16,7 @@ export class FreelancerProjects extends React.Component {
     this.bringProjects(this.props.id);
   }
   bringProjects(id) {
-    const url = 'http://localhost:3001/project/freelancer/' + id;
+    const url = 'https://kanrisha.herokuapp.com/project/freelancer/' + id;
     axios.get(
       url
     ).then( response => {

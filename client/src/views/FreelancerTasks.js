@@ -14,7 +14,7 @@ export class FreelancerTasks extends React.Component {
     }
 
     componentDidMount () {
-      const url = 'http://localhost:3001/task/5edc561ee5fbba03044273ce/5edc5501e5fbba03044273cd'; // projectId/freelancerId
+      const url = 'https://kanrisha.herokuapp.com/task/5edc561ee5fbba03044273ce/5edc5501e5fbba03044273cd'; // projectId/freelancerId
       axios.get(
         url
       ).then(response => {

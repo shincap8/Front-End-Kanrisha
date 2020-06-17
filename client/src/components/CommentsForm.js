@@ -31,7 +31,7 @@ export class CommentsForm extends React.Component {
         }
         const { subject, taskId, description, idOwner } = this.state;
         await axios.post(
-            'http://localhost:3001/createcomment',
+            'https://kanrisha.herokuapp.com/createcomment',
             {
                 title: subject,
                 taskId: taskId,

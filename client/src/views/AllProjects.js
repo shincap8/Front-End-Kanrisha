@@ -19,7 +19,7 @@ export class AllProjects extends React.Component {
 
   componentDidMount () {
     if (this.state.user === "manager") {
-      const url = 'http://localhost:3001/projects/' + this.state.managerId;
+      const url = 'https://kanrisha.herokuapp.com/projects/' + this.state.managerId;
       axios.get(
         url
       ).then(response => {
@@ -28,7 +28,7 @@ export class AllProjects extends React.Component {
         console.log("registration error", error);
       });
     } else {
-      const url = 'http://localhost:3001/project/' + this.state.managerId;
+      const url = 'https://kanrisha.herokuapp.com/project/' + this.state.managerId;
       axios.get(
         url
       ).then(response => {

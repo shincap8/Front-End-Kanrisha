@@ -42,7 +42,7 @@ export class NewProject extends React.Component {
     console.log(this.state.project)
     const { name, description, deadline, tasksId, managerId, freelancersId, status, advanced } = this.state.project;
     axios.post(
-      'http://localhost:3001/new-project',
+      'https://kanrisha.herokuapp.com/new-project',
       {
         name: name,
         description: description,
