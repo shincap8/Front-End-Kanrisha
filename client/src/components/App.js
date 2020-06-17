@@ -1,9 +1,9 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router';
 import history from '../history';
 import { Login } from '../views/Login';
 import { Home } from '../views/Home';
-import { Layout } from './Layout';
+//import { Layout } from './Layout';
 import { NewProject } from '../views/NewProject';
 import { ProjectPage } from '../views/ProjectPage';
 import {NewTask} from '../views/NewTask';
@@ -17,14 +17,14 @@ function App() {
     <Router history={history}>
         <Route exact path="/" component={Login} />
         <Route exact path="/NotFound" component={NotFound} />
-        <Layout>
+        {/*<Layout>*/}
           <Route exact path="/Home" component={Home} />
           <Route exact path="/AllProjects" component={AllProjects} />
           <Route exact path="/NewProject" component={NewProject} />
           <Route exact path="/ProjectPage" component={ProjectPage} />
           <Route exact path="/NewTask" component={NewTask} />
           <Route exact path="/TaskPage" component={TaskPage} />
-        </Layout>
+        {/*</Layout>*/}
     </Router>
   );
 }
