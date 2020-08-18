@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginManager from '../components/LoginManager';
-import Logo from '../img/Logo.png';
+import Logo from '../img/LogoC.png';
 import LoginFreelancer from '../components/LoginFreelancer';
 
 export class Login extends React.Component {
